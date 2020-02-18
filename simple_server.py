@@ -25,13 +25,16 @@ def client_thread(conn):
 
     #infinite loop so that thread won't end.
     while True:
-        data = conn.recv(1024)
-        reply = b'OK...' + data
-        recieved_string = data.decode('utf-8')
-        print("Recieved {} from client".format(recieved_string))
-        if not data: 
-            break
-        conn.sendall(reply)
+        try:
+            data = conn.recv(1024)
+            reply = b'OK...' + data
+            recieved_string = data.decode('utf-8')
+            print("Recieved {} from client".format(recieved_string))
+            if not data: 
+                break
+            conn.sendall(reply)
+        except ConnectionError as conError:
+            print('Connection failed. Error Code : {}\nMessage {}'.format(str(conError.errno),str(conError)))
     conn.close()
 
 # now keep talking with the client
