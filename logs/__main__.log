@@ -1,0 +1,3 @@
+2020-02-18 12:37:11,597 - __main__ - INFO - 40 - Socket created
+2020-02-18 12:37:11,597 - __main__ - INFO - 48 - Socket bind complete
+2020-02-18 12:37:11,597 - __main__ - INFO - 51 - Socket now listening for maximum 12 connections on port 5000
