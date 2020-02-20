@@ -128,6 +128,24 @@ class proxy_server:
             tmp_socket.close()
         conn.close()
     
+    def is_https_request(self, raw_request):
+        """Check whether request is https (True) or http (False).
+
+        CHecks first line of request for 'CONNECT' keyword.
+        ## Parameters:
+        raw_request - The bytes of a request as returned from a socket.
+        ##  Returns:
+        is_http - Boolean
+        """
+        # Make sure data is decoded from bytes to a string
+        request = raw_request.decode('utf-8')
+        lines = request.split('\n')
+        https_pos = lines[0].find("CONNECT")
+        if https_pos == -1:
+            return False
+        else:
+            return True
+
     def parse_request(self, raw_request):
         """Parse the webserver url and port(if available) out of a raw request.
 
