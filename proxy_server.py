@@ -1,11 +1,13 @@
 """A proxy server and logging functions."""
-import socket
-import sys
 import argparse
 import logging
 import re
 import signal
+import socket
+import json
+import sys
 import threading
+
 
 def setup_logging():
     """Initialize logging to file and console."""
@@ -15,7 +17,7 @@ def setup_logging():
     # Create handlers
     c_handler = logging.StreamHandler()
     f_handler = logging.FileHandler(project_loc + "logs/{}.log".format(__name__), mode='w')
-    c_handler.setLevel(logging.DEBUG)
+    c_handler.setLevel(logging.WARNING)
     # Create formatters and add it to handlers
     c_format = logging.Formatter('%(name)s - %(levelname)s - %(lineno)d - %(message)s')
     f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(message)s')
@@ -29,20 +31,21 @@ def setup_logging():
 class proxy_server:
     """A proxy server for http/https connections."""
 
-    def __init__(self, PORT, MAX_CONNECTIONS):
+    def __init__(self, PORT, MAX_CONNECTIONS, MAN_CONSOLE_PORT):
         """Inialize a proxy server."""
         self.PORT = PORT
         self.MAX_CONNECTIONS = MAX_CONNECTIONS
+        self.MAN_CONSOLE_PORT = MAN_CONSOLE_PORT
         self.HOST = ''
         self.MAX_REQ_LEN = 4096
         self.CONNECTION_TIMEOUT = 10
         self.logger = setup_logging()
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.logger.info('Socket created')
-        signal.signal(signal.SIGINT, self.shutdown)
+        # signal.signal(signal.SIGINT, self.shutdown)
         self.bind_to_port()
         self.socket.listen(MAX_CONNECTIONS)
-        self.logger.info('Socket now listening for maximum {0} connections on port {1}'.format(MAX_CONNECTIONS,PORT))
+        self.logger.info('Proxy server now listening for maximum {0} connections on port {1}'.format(MAX_CONNECTIONS,self.PORT))
         self.serve()
     
     def bind_to_port(self):
@@ -109,26 +112,62 @@ class proxy_server:
             if raw_request != b'':  
                 request = self.parse_request(raw_request)
                 if not request: 
-                    self.logger.error("no data found for request")
-                tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-                tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
-                tmp_socket.connect((request['url'], request['port']))
-                tmp_socket.sendall(request['request'])
-                while True:
-                    data = tmp_socket.recv(self.MAX_REQ_LEN)
-                    if (len(data) > 0):
-                        conn.send(data)
-                    else:
-                            break
-                tmp_socket.close()
+                    self.logger.error("No data found for request")
+
+                # Send request to management console
+                tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                tmp_socket.connect(('127.0.0.1', self.MAN_CONSOLE_PORT))
+                message = json.dumps(request)
+                tmp_socket.sendall(message.encode('utf-8'))
+
+                if self.is_https_request(request['request']):
+                    self.logger.info("https request: {}".format(request['request']))
+                    tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                    # tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
+                    tmp_socket.connect((request['url'], request['port']))
+                    reply = "HTTP/1.0 200 Connection established\r\n"
+                    reply += "Proxy-agent: Pyx\r\n"
+                    reply += "\r\n"
+                    conn.sendall(reply.encode())
+                    # Indiscriminately forward bytes
+                    conn.setblocking(0)
+                    tmp_socket.setblocking(0)
+                    while True:
+                        try:
+                            request = conn.recv(self.MAX_REQ_LEN)
+                            tmp_socket.sendall(request)
+                        except socket.error as err:
+                            # self.logger.error("Socket error: {}".format(str(err)))
+                            pass
+                        try:
+                            reply = tmp_socket.recv(self.MAX_REQ_LEN)
+                            conn.sendall(reply)
+                        except socket.error as err:
+                            # self.logger.error("Socket error: {}".format(str(err)))
+                            pass
+                else: # It is a http request
+                    self.logger.info("http request: {}".format(request['request']))
+                    tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                    tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
+                    tmp_socket.connect((request['url'], request['port']))
+                    tmp_socket.sendall(request['request'])
+                    while True:
+                        data = tmp_socket.recv(self.MAX_REQ_LEN)
+                        if (len(data) > 0):
+                            conn.send(data)
+                        else:
+                                break
+                    tmp_socket.close()
         except ConnectionError as conError:
             self.logger.error('Connection failed. Error Code : {}\nMessage {}'.format(str(conError.errno),str(conError)))
         except socket.timeout:
             self.logger.error("Socket timed out.")
             tmp_socket.close()
+        except UnicodeDecodeError as err:
+            self.logger.error('Unicode error. Message {}'.format(str(err)))
         conn.close()
     
-    def is_https_request(self, raw_request):
+    def is_https_request(self, request):
         """Check whether request is https (True) or http (False).
 
         CHecks first line of request for 'CONNECT' keyword.
@@ -137,8 +176,6 @@ class proxy_server:
         ##  Returns:
         is_http - Boolean
         """
-        # Make sure data is decoded from bytes to a string
-        request = raw_request.decode('utf-8')
         lines = request.split('\n')
         https_pos = lines[0].find("CONNECT")
         if https_pos == -1:
@@ -157,7 +194,10 @@ class proxy_server:
         An empty dict.
         """
         # Make sure data is decoded from bytes to a string
-        request = raw_request.decode('utf-8')
+        try:
+            request = raw_request.decode('utf-8')
+        except UnicodeDecodeError as err:
+            raise err
         # Split request into lines
         lines = request.split('\n')
         pattern = re.compile("[^: ]*[:][0-9]+")
@@ -188,7 +228,7 @@ class proxy_server:
         else:
             url = temp_url[:port_pos] 
         self.logger.info("Parsed url as '{0}' and port as '{1}'.".format(url, port))
-        return_request = {'port': port, 'url': url, 'request':raw_request}
+        return_request = {'port': port, 'url': url, 'request':request}
         return return_request
 
     def shutdown(self, signum, frame):
@@ -208,6 +248,5 @@ if __name__ == "__main__":
     parser.add_argument("port_num", type=int, help="Port number for the server to listen on.")
     parser.add_argument("-c","--max_cons", type=int, default=10, help="Maximum number of connections to hold before dropping one")
     args = parser.parse_args()
-    proxy_server(args.port_num, args.max_cons)
-
-
+    # proxy_server(args.port_num, args.max_cons, args.max_cons+1)
+    print("Please start the proxy server via the management console.")
