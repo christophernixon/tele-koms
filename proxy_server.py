@@ -5,7 +5,9 @@ import re
 import signal
 import socket
 import json
+import urllib
 import sys
+import time
 import threading
 
 
@@ -35,14 +37,18 @@ class proxy_server:
         """Inialize a proxy server."""
         self.PORT = PORT
         self.MAX_CONNECTIONS = MAX_CONNECTIONS
+        # The port the Management Console is listening on is required for passing messages
         self.MAN_CONSOLE_PORT = MAN_CONSOLE_PORT
         self.HOST = ''
         self.MAX_REQ_LEN = 4096
         self.CONNECTION_TIMEOUT = 10
+        self.CACHE = {}
+        self.USE_CACHE = False # A flag for whether or not to use the cache
+        # Logging
         self.logger = setup_logging()
+        # Setting up the socket for the server to listen on
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.logger.info('Socket created')
-        # signal.signal(signal.SIGINT, self.shutdown)
         self.bind_to_port()
         self.socket.listen(MAX_CONNECTIONS)
         self.logger.info('Proxy server now listening for maximum {0} connections on port {1}'.format(MAX_CONNECTIONS,self.PORT))
@@ -110,6 +116,7 @@ class proxy_server:
         try:
             raw_request = conn.recv(self.MAX_REQ_LEN)
             if raw_request != b'':  
+                is_not_blocked = True
                 request = self.parse_request(raw_request)
                 if not request: 
                     self.logger.error("No data found for request")
@@ -118,18 +125,25 @@ class proxy_server:
                 tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tmp_socket.connect(('127.0.0.1', self.MAN_CONSOLE_PORT))
                 message = json.dumps(request)
-                tmp_socket.sendall(message.encode('utf-8'))
+                tmp_socket.sendall(message.encode('latin-1'))
+                while True:
+                    data = tmp_socket.recv(self.MAX_REQ_LEN)
+                    if (len(data) > 0):
+                        if data.decode('latin-1') == 'HTTP/1.0 400 Site blacklisted\r\n':
+                            is_not_blocked = False
+                            conn.sendall(b'')
+                            conn.close()
+                    else:
+                        break
 
-                if self.is_https_request(request['request']):
+                if is_not_blocked and self.is_https_request(request['request']):
                     self.logger.info("https request: {}".format(request['request']))
                     tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-                    # tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
                     tmp_socket.connect((request['url'], request['port']))
                     reply = "HTTP/1.0 200 Connection established\r\n"
                     reply += "Proxy-agent: Pyx\r\n"
                     reply += "\r\n"
                     conn.sendall(reply.encode())
-                    # Indiscriminately forward bytes
                     conn.setblocking(0)
                     tmp_socket.setblocking(0)
                     while True:
@@ -137,27 +151,44 @@ class proxy_server:
                             request = conn.recv(self.MAX_REQ_LEN)
                             tmp_socket.sendall(request)
                         except socket.error as err:
-                            # self.logger.error("Socket error: {}".format(str(err)))
                             pass
+                        except BlockingIOError as err:
+                            time.sleep(0.1)
                         try:
                             reply = tmp_socket.recv(self.MAX_REQ_LEN)
                             conn.sendall(reply)
                         except socket.error as err:
-                            # self.logger.error("Socket error: {}".format(str(err)))
                             pass
-                else: # It is a http request
-                    self.logger.info("http request: {}".format(request['request']))
-                    tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-                    tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
-                    tmp_socket.connect((request['url'], request['port']))
-                    tmp_socket.sendall(request['request'])
-                    while True:
-                        data = tmp_socket.recv(self.MAX_REQ_LEN)
-                        if (len(data) > 0):
-                            conn.send(data)
-                        else:
+                        except BlockingIOError as err:
+                            time.sleep(0.1)
+
+                elif is_not_blocked: # It is a http request
+                    # Check cache
+                    if self.USE_CACHE and request['request'][0:255] in self.CACHE:
+                        self.logger.info("Cache hit for: '{}...'".format(request['request'][0:20]))
+                        conn.sendall(self.CACHE[request['request'][0:255]].encode('latin-1'))
+
+                    else:
+                        tmp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                        tmp_socket.settimeout(self.CONNECTION_TIMEOUT)
+                        tmp_socket.connect((request['url'], request['port']))
+
+                        self.logger.info("Cache miss for: '{}...'".format(request['request'][0:20]))
+                        tmp_socket.sendall(request['request'].encode('latin-1'))
+                        while True:
+                            data = tmp_socket.recv(self.MAX_REQ_LEN)
+                            if (len(data) > 0):
+                                conn.send(data)
+                                cache_result = data.decode('latin-1')
+                                 # Update cache
+                                if self.USE_CACHE:
+                                    self.logger.info("Updated cache for: '{}...'".format(request['request'][0:20]))
+                                    cache_request = urllib.Request('http://'+request['url'])
+                                    cache_response = urllib.Request.urlopen(cache_request)
+                                    self.CACHE[request['request'][0:255]] = cache_response
+                            else:
                                 break
-                    tmp_socket.close()
+                        tmp_socket.close()
         except ConnectionError as conError:
             self.logger.error('Connection failed. Error Code : {}\nMessage {}'.format(str(conError.errno),str(conError)))
         except socket.timeout:
@@ -165,7 +196,8 @@ class proxy_server:
             tmp_socket.close()
         except UnicodeDecodeError as err:
             self.logger.error('Unicode error. Message {}'.format(str(err)))
-        conn.close()
+        finally:
+            conn.close()
     
     def is_https_request(self, request):
         """Check whether request is https (True) or http (False).
@@ -182,7 +214,7 @@ class proxy_server:
             return False
         else:
             return True
-
+    
     def parse_request(self, raw_request):
         """Parse the webserver url and port(if available) out of a raw request.
 
@@ -195,7 +227,7 @@ class proxy_server:
         """
         # Make sure data is decoded from bytes to a string
         try:
-            request = raw_request.decode('utf-8')
+            request = raw_request.decode('latin-1')
         except UnicodeDecodeError as err:
             raise err
         # Split request into lines
@@ -207,9 +239,7 @@ class proxy_server:
             url_port = match.group()
             port_pos = url_port.find(":") # find the port pos (if any)
             port = int(url_port[port_pos+1:])
-            self.logger.info("Found match for pattern: {}".format(url_port))
         else:
-            self.logger.info("Pattern matching failed for request '{}'.".format(raw_request))
             url_port = lines[0].split(' ')[1]
             port_pos = -1
             # Use default port
@@ -230,23 +260,3 @@ class proxy_server:
         self.logger.info("Parsed url as '{0}' and port as '{1}'.".format(url, port))
         return_request = {'port': port, 'url': url, 'request':request}
         return return_request
-
-    def shutdown(self, signum, frame):
-        """Handle exiting server. Join all threads."""
-        self.logger.warning("Ctrl+C inputted so shutting down server")
-        main_thread = threading.currentThread()
-        for t in threading.enumerate():
-            if t is main_thread:
-                self.logger.error("Attempt to join() {}".format(t.getName()))
-                continue
-            t.join()
-            self.socket.close()
-        sys.exit(0)
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("port_num", type=int, help="Port number for the server to listen on.")
-    parser.add_argument("-c","--max_cons", type=int, default=10, help="Maximum number of connections to hold before dropping one")
-    args = parser.parse_args()
-    # proxy_server(args.port_num, args.max_cons, args.max_cons+1)
-    print("Please start the proxy server via the management console.")

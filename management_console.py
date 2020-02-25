@@ -35,7 +35,7 @@ class management_console:
         # Start a thread for proxy server.
         self.PROXY_SERVER_THREAD = threading.Thread(target=proxy_server, args=(self.PROXY_PORT, self.MAX_CONNECTIONS, self.PORT,))
         self.PROXY_SERVER_THREAD.start()
-        # self.PROXY_SERVER = proxy_server(self.PROXY_PORT, self.MAX_CONNECTIONS, self.PORT)
+        self.BLACKLIST = []
         self.serve()
     
     def bind_to_port(self):
@@ -106,7 +106,10 @@ class management_console:
             raw_request = conn.recv(self.MAX_REQ_LEN)
             if raw_request != b'':
                 request = json.loads(raw_request)
-                print(request)
+                if request['url'] in self.BLACKLIST:
+                    response = 'HTTP/1.0 400 Site blacklisted\r\n'
+                    conn.sendall(response.encode('latin-1'))
+                conn.sendall(b'')
         except ConnectionError as conError:
             self.logger.error('Connection failed. Error Code : {}\nMessage {}'.format(str(conError.errno),str(conError)))
         
@@ -123,10 +126,18 @@ class management_console:
         None
         """
         while True:
-            print("Waiting for input")
             user_input = input("Management console live.\n")
-            print("User inputted: {}".format(user_input))
-    
+            user_words = user_input.split(' ')
+            if user_words[0] == 'blacklist':
+                self.BLACKLIST.append(user_words[1])
+                print("Blacklist: {}".format(self.BLACKLIST))
+            if user_words[0] == 'whitelist':
+                if user_words[1] in self.BLACKLIST:
+                    self.BLACKLIST.remove(user_words[1])
+                print("Whitelisted: {}".format(user_words[1]))
+            else:
+                print("Incorrect input.\nFor blacklisting: 'blacklist <website>'\nFor whitelisting: 'whitelist <website>'")
+
     def shutdown(self, signum, frame):
         """Handle exiting server. Join all threads."""
         self.logger.warning("Ctrl+C inputted so shutting down server")
