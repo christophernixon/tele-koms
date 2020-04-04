@@ -1,0 +1,6 @@
+sample_request.txt
+study_materials.md
+assignment.zip
+logs/*
+__pycache__
+.mypy_cache

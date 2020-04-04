@@ -1,0 +1,780 @@
+2020-02-25 11:24:18,544 - proxy_server - INFO - 54 - Socket created
+2020-02-25 11:24:18,544 - proxy_server - ERROR - 74 - Bind failed. Error Code : 48
+Message [Errno 48] Address already in use
+2020-02-25 11:24:18,544 - proxy_server - INFO - 76 - Attempting to find address not already in use.
+2020-02-25 11:24:18,545 - proxy_server - INFO - 87 - Port 5002 already in use
+2020-02-25 11:24:18,545 - proxy_server - INFO - 84 - Found available address at port 5003
+2020-02-25 11:24:18,545 - proxy_server - INFO - 94 - Socket bind complete
+2020-02-25 11:24:18,545 - proxy_server - INFO - 57 - Proxy server now listening for maximum 12 connections on port 5003
+2020-02-25 11:24:31,189 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57913
+2020-02-25 11:24:31,192 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:41,235 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57922
+2020-02-25 11:25:41,238 - proxy_server - INFO - 276 - Parsed url as 'safebrowsing.googleapis.com' and port as '443'.
+2020-02-25 11:25:41,272 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:25:41,508 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57925
+2020-02-25 11:25:41,510 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:41,512 - proxy_server - INFO - 142 - https request: CONNECT safebrowsing.googleapis.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: safebrowsing.googleapis.com:443
+
+
+2020-02-25 11:25:41,537 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57928
+2020-02-25 11:25:41,546 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:41,546 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57929
+2020-02-25 11:25:41,551 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57930
+2020-02-25 11:25:41,554 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57931
+2020-02-25 11:25:41,555 - proxy_server - INFO - 276 - Parsed url as 'ocsp.pki.goog' and port as '80'.
+2020-02-25 11:25:41,560 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:25:41,584 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:41,587 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:25:41,588 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:41,609 - proxy_server - INFO - 180 - Cache miss for: 'POST http://ocsp.pki...'
+2020-02-25 11:25:41,618 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:25:51,536 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:25:51,536 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:25:51,537 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:25:51,582 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:25:51,583 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:25:51,583 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:25:51,616 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:25:51,617 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:25:51,618 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:25:51,641 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:25:51,642 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:25:51,642 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:25:51,650 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57941
+2020-02-25 11:25:51,676 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:25:51,721 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:25:51,730 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:25:51,730 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:25:51,746 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:01,750 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:01,750 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:01,751 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:09,890 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57945
+2020-02-25 11:26:09,900 - proxy_server - INFO - 276 - Parsed url as 'incoming.telemetry.mozilla.org' and port as '443'.
+2020-02-25 11:26:09,926 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:09,942 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57948
+2020-02-25 11:26:09,974 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:09,994 - proxy_server - INFO - 142 - https request: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: incoming.telemetry.mozilla.org:443
+
+
+2020-02-25 11:26:10,000 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57950
+2020-02-25 11:26:10,014 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:26:10,014 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57951
+2020-02-25 11:26:10,025 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:26:10,038 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57952
+2020-02-25 11:26:10,047 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:26:10,048 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57953
+2020-02-25 11:26:10,054 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,056 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57954
+2020-02-25 11:26:10,074 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:26:10,076 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,081 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:26:10,121 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:26:10,124 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57966
+2020-02-25 11:26:10,140 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,235 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:26:10,238 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,247 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57967
+2020-02-25 11:26:10,250 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,252 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:26:10,263 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57968
+2020-02-25 11:26:10,270 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,281 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57969
+2020-02-25 11:26:10,287 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,288 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,292 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57970
+2020-02-25 11:26:10,304 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,305 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,313 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57971
+2020-02-25 11:26:10,321 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,352 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,354 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57973
+2020-02-25 11:26:10,359 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,362 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,365 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57974
+2020-02-25 11:26:10,368 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,371 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57975
+2020-02-25 11:26:10,373 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,377 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57976
+2020-02-25 11:26:10,379 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:10,379 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57977
+2020-02-25 11:26:10,384 - proxy_server - INFO - 276 - Parsed url as 'fonts.googleapis.com' and port as '443'.
+2020-02-25 11:26:10,397 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,407 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,414 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,423 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,435 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,444 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:10,634 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 57999
+2020-02-25 11:26:12,266 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58002
+2020-02-25 11:26:12,268 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:12,272 - proxy_server - INFO - 142 - https request: CONNECT fonts.googleapis.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: fonts.googleapis.com:443
+
+
+2020-02-25 11:26:12,700 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58005
+2020-02-25 11:26:12,702 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:12,705 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:12,829 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58008
+2020-02-25 11:26:12,831 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:12,834 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:12,918 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58011
+2020-02-25 11:26:12,921 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:12,925 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:13,095 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58014
+2020-02-25 11:26:13,098 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:13,108 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:13,282 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58017
+2020-02-25 11:26:13,293 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58018
+2020-02-25 11:26:13,297 - proxy_server - INFO - 276 - Parsed url as 'www.google.com' and port as '443'.
+2020-02-25 11:26:13,299 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58019
+2020-02-25 11:26:13,304 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:13,306 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58020
+2020-02-25 11:26:15,893 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:18,898 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:18,899 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:18,901 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:19,942 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:19,944 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:19,946 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,088 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,089 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,090 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,230 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,232 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,236 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,237 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,238 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,238 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,253 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,256 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,256 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,260 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,263 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,265 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,287 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,288 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,290 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,296 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,297 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,299 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,353 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,356 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,357 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,360 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,361 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,367 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,374 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,375 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,376 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,402 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,406 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,406 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,415 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,415 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,416 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,422 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,440 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,440 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,441 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,442 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,445 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,446 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,448 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,450 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,456 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58023
+2020-02-25 11:26:20,463 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:20,466 - proxy_server - INFO - 142 - https request: CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+2020-02-25 11:26:20,471 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:20,472 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:20,478 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:20,482 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58026
+2020-02-25 11:26:20,485 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:20,498 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:20,517 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58029
+2020-02-25 11:26:20,521 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58030
+2020-02-25 11:26:20,535 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '443'.
+2020-02-25 11:26:20,536 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58031
+2020-02-25 11:26:20,543 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '443'.
+2020-02-25 11:26:20,550 - proxy_server - INFO - 142 - https request: CONNECT fonts.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: fonts.gstatic.com:443
+
+
+2020-02-25 11:26:20,551 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:20,551 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58032
+2020-02-25 11:26:20,565 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '443'.
+2020-02-25 11:26:20,569 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58033
+2020-02-25 11:26:20,584 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '443'.
+2020-02-25 11:26:20,601 - proxy_server - INFO - 142 - https request: CONNECT fonts.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: fonts.gstatic.com:443
+
+
+2020-02-25 11:26:20,607 - proxy_server - INFO - 142 - https request: CONNECT fonts.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: fonts.gstatic.com:443
+
+
+2020-02-25 11:26:20,675 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58042
+2020-02-25 11:26:20,727 - proxy_server - INFO - 276 - Parsed url as 'optanon.blob.core.windows.net' and port as '443'.
+2020-02-25 11:26:20,729 - proxy_server - INFO - 142 - https request: CONNECT fonts.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: fonts.gstatic.com:443
+
+
+2020-02-25 11:26:20,734 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58044
+2020-02-25 11:26:21,057 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58046
+2020-02-25 11:26:21,064 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58047
+2020-02-25 11:26:21,093 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58048
+2020-02-25 11:26:21,346 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58049
+2020-02-25 11:26:21,350 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58050
+2020-02-25 11:26:21,557 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58051
+2020-02-25 11:26:21,561 - proxy_server - INFO - 276 - Parsed url as 'adservice.google.com' and port as '443'.
+2020-02-25 11:26:21,568 - proxy_server - INFO - 142 - https request: CONNECT optanon.blob.core.windows.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: optanon.blob.core.windows.net:443
+
+
+2020-02-25 11:26:21,640 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58054
+2020-02-25 11:26:21,644 - proxy_server - INFO - 276 - Parsed url as 'code.jquery.com' and port as '443'.
+2020-02-25 11:26:21,647 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58055
+2020-02-25 11:26:21,659 - proxy_server - INFO - 142 - https request: CONNECT adservice.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: adservice.google.com:443
+
+
+2020-02-25 11:26:21,660 - proxy_server - INFO - 276 - Parsed url as 'www.googletagmanager.com' and port as '443'.
+2020-02-25 11:26:21,673 - proxy_server - INFO - 142 - https request: CONNECT code.jquery.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: code.jquery.com:443
+
+
+2020-02-25 11:26:21,921 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58060
+2020-02-25 11:26:21,926 - proxy_server - INFO - 276 - Parsed url as 'adservice.google.ie' and port as '443'.
+2020-02-25 11:26:21,928 - proxy_server - INFO - 142 - https request: CONNECT www.googletagmanager.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.googletagmanager.com:443
+
+
+2020-02-25 11:26:22,026 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:22,033 - proxy_server - INFO - 142 - https request: CONNECT adservice.google.ie:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: adservice.google.ie:443
+
+
+2020-02-25 11:26:22,127 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58065
+2020-02-25 11:26:22,130 - proxy_server - INFO - 276 - Parsed url as 'googleads.g.doubleclick.net' and port as '443'.
+2020-02-25 11:26:22,150 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:22,267 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58068
+2020-02-25 11:26:22,269 - proxy_server - INFO - 276 - Parsed url as 'www.google-analytics.com' and port as '443'.
+2020-02-25 11:26:22,274 - proxy_server - INFO - 142 - https request: CONNECT googleads.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: googleads.g.doubleclick.net:443
+
+
+2020-02-25 11:26:25,122 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58071
+2020-02-25 11:26:25,136 - proxy_server - INFO - 276 - Parsed url as 'ogs.google.com' and port as '443'.
+2020-02-25 11:26:25,147 - proxy_server - INFO - 142 - https request: CONNECT www.google-analytics.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google-analytics.com:443
+
+
+2020-02-25 11:26:25,793 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:26,795 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:26,795 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:26,795 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:26,795 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:26,796 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:30,509 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:30,509 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:30,517 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:30,583 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:30,586 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:30,587 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:30,599 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58074
+2020-02-25 11:26:30,615 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:30,640 - proxy_server - INFO - 142 - https request: CONNECT ogs.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: ogs.google.com:443
+
+
+2020-02-25 11:26:30,812 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58077
+2020-02-25 11:26:30,843 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58078
+2020-02-25 11:26:30,848 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58079
+2020-02-25 11:26:31,118 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58080
+2020-02-25 11:26:31,202 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58081
+2020-02-25 11:26:31,206 - proxy_server - INFO - 276 - Parsed url as 'play.google.com' and port as '443'.
+2020-02-25 11:26:31,227 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:31,808 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58084
+2020-02-25 11:26:31,814 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58085
+2020-02-25 11:26:31,825 - proxy_server - INFO - 276 - Parsed url as 'play.google.com' and port as '443'.
+2020-02-25 11:26:31,830 - proxy_server - INFO - 142 - https request: CONNECT play.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: play.google.com:443
+
+
+2020-02-25 11:26:32,160 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:32,163 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:32,163 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:36,680 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:36,681 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:36,681 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:36,690 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:37,681 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:41,241 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:41,249 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:41,249 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:41,265 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58088
+2020-02-25 11:26:41,276 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:41,286 - proxy_server - INFO - 142 - https request: CONNECT play.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: play.google.com:443
+
+
+2020-02-25 11:26:41,374 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58091
+2020-02-25 11:26:41,378 - proxy_server - INFO - 276 - Parsed url as 'play.google.com' and port as '443'.
+2020-02-25 11:26:41,432 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:42,462 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58094
+2020-02-25 11:26:42,464 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:42,466 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58095
+2020-02-25 11:26:42,470 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58096
+2020-02-25 11:26:42,471 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:42,475 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:42,475 - proxy_server - INFO - 142 - https request: CONNECT play.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: play.google.com:443
+
+
+2020-02-25 11:26:42,512 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:42,530 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:51,448 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:51,451 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:51,458 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:52,537 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:52,540 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:52,547 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:52,550 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58103
+2020-02-25 11:26:52,556 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:26:52,564 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:26:52,567 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:52,568 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:26:52,595 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58105
+2020-02-25 11:26:52,600 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:26:52,612 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:26:52,641 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:27:02,623 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:27:02,624 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:27:02,635 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:02,888 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:27:02,892 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:27:02,896 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:02,911 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58109
+2020-02-25 11:27:02,923 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:02,950 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:27:12,986 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:27:12,989 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:27:12,991 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:12,999 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58112
+2020-02-25 11:27:13,016 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,045 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58115
+2020-02-25 11:27:13,051 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,060 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,067 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:27:13,100 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58117
+2020-02-25 11:27:13,105 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,112 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,139 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58119
+2020-02-25 11:27:13,145 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,156 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,184 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58121
+2020-02-25 11:27:13,190 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,202 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,231 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58123
+2020-02-25 11:27:13,262 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,265 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,284 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58125
+2020-02-25 11:27:13,297 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,302 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,331 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58127
+2020-02-25 11:27:13,346 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,355 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:13,384 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58129
+2020-02-25 11:27:13,391 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:13,394 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:23,142 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:27:23,186 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:27:23,188 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:27:23,912 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58132
+2020-02-25 11:27:23,916 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:27:23,952 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:28,547 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58137
+2020-02-25 11:28:28,552 - proxy_server - INFO - 276 - Parsed url as 'incoming.telemetry.mozilla.org' and port as '443'.
+2020-02-25 11:28:28,576 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:28,772 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58140
+2020-02-25 11:28:28,776 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:28,784 - proxy_server - INFO - 142 - https request: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: incoming.telemetry.mozilla.org:443
+
+
+2020-02-25 11:28:29,068 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58143
+2020-02-25 11:28:31,225 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58144
+2020-02-25 11:28:31,229 - proxy_server - INFO - 276 - Parsed url as 'www.facebook.com' and port as '443'.
+2020-02-25 11:28:31,243 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:31,259 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58147
+2020-02-25 11:28:31,285 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:31,286 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58148
+2020-02-25 11:28:31,291 - proxy_server - INFO - 142 - https request: CONNECT www.facebook.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.facebook.com:443
+
+
+2020-02-25 11:28:31,292 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:31,309 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:31,320 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58153
+2020-02-25 11:28:31,328 - proxy_server - INFO - 276 - Parsed url as 'ocsp.digicert.com' and port as '80'.
+2020-02-25 11:28:31,341 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,279 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58156
+2020-02-25 11:28:32,287 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:28:32,302 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58157
+2020-02-25 11:28:32,308 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:28:32,309 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58158
+2020-02-25 11:28:32,311 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:28:32,317 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58161
+2020-02-25 11:28:32,320 - proxy_server - INFO - 180 - Cache miss for: 'POST http://ocsp.dig...'
+2020-02-25 11:28:32,326 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58162
+2020-02-25 11:28:32,328 - proxy_server - INFO - 276 - Parsed url as 'fonts.gstatic.com' and port as '80'.
+2020-02-25 11:28:32,341 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58163
+2020-02-25 11:28:32,342 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,342 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:28:32,354 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:28:32,355 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58164
+2020-02-25 11:28:32,358 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,377 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58165
+2020-02-25 11:28:32,383 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58166
+2020-02-25 11:28:32,384 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,392 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,392 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:28:32,402 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58167
+2020-02-25 11:28:32,403 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,412 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,412 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,416 - proxy_server - INFO - 180 - Cache miss for: 'GET http://fonts.gst...'
+2020-02-25 11:28:32,432 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,437 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58168
+2020-02-25 11:28:32,455 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,471 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,472 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58169
+2020-02-25 11:28:32,482 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,486 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,488 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58170
+2020-02-25 11:28:32,490 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,523 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:32,539 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,580 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58193
+2020-02-25 11:28:32,586 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58194
+2020-02-25 11:28:32,597 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,614 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,615 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58195
+2020-02-25 11:28:32,619 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,630 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,634 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58196
+2020-02-25 11:28:32,635 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,638 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:32,640 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:32,664 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,678 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58197
+2020-02-25 11:28:32,684 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:32,700 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58198
+2020-02-25 11:28:32,705 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:32,707 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,716 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:32,729 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58200
+2020-02-25 11:28:32,742 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:32,751 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58201
+2020-02-25 11:28:32,761 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:34,906 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:37,913 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:37,916 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:38,797 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:38,797 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:38,804 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:41,252 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:41,254 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:41,256 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:41,315 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:41,320 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:41,322 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:41,360 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:41,361 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:41,373 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,370 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,370 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,371 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,396 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,400 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,405 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,407 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,415 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,422 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,439 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,447 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,459 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,461 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,468 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,473 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,486 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,495 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,499 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,501 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,503 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,505 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,519 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,534 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,556 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,559 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,567 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,574 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,573 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,583 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,592 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,594 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,597 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,617 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,619 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58217
+2020-02-25 11:28:42,631 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:42,631 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,634 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58218
+2020-02-25 11:28:42,634 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,643 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:42,647 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,650 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:42,656 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58221
+2020-02-25 11:28:42,659 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:42,674 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,675 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,675 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,684 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:42,689 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58225
+2020-02-25 11:28:42,692 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:42,681 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:42,696 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:42,696 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:42,703 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:42,705 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58228
+2020-02-25 11:28:42,725 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:42,737 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:42,755 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58229
+2020-02-25 11:28:42,758 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:42,760 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:42,765 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58230
+2020-02-25 11:28:42,779 - proxy_server - INFO - 276 - Parsed url as 'static.xx.fbcdn.net' and port as '443'.
+2020-02-25 11:28:42,784 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58231
+2020-02-25 11:28:42,788 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:42,793 - proxy_server - INFO - 276 - Parsed url as 'facebook.com' and port as '443'.
+2020-02-25 11:28:42,796 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:42,808 - proxy_server - INFO - 142 - https request: CONNECT static.xx.fbcdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: static.xx.fbcdn.net:443
+
+
+2020-02-25 11:28:43,933 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58241
+2020-02-25 11:28:43,940 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58242
+2020-02-25 11:28:43,947 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58243
+2020-02-25 11:28:49,068 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:49,072 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:50,066 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,723 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:52,725 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:52,729 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,735 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58244
+2020-02-25 11:28:52,742 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:52,749 - proxy_server - INFO - 142 - https request: CONNECT facebook.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: facebook.com:443
+
+
+2020-02-25 11:28:52,745 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:52,746 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:52,768 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:52,773 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:52,794 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,798 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,802 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58247
+2020-02-25 11:28:52,816 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58248
+2020-02-25 11:28:52,819 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:52,823 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:52,838 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:52,839 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:52,850 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,851 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:28:52,867 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:28:52,869 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58252
+2020-02-25 11:28:52,871 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:52,873 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.
+2020-02-25 11:28:52,876 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:28:52,882 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58254
+2020-02-25 11:28:52,925 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:52,934 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:28:58,801 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:29:00,150 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58257
+2020-02-25 11:29:00,158 - proxy_server - INFO - 276 - Parsed url as 'pixel.facebook.com' and port as '443'.
+2020-02-25 11:29:00,219 - proxy_server - INFO - 180 - Cache miss for: 'GET http://kilmainha...'
+2020-02-25 11:29:02,914 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:29:02,925 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:29:02,940 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:29:02,948 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:29:02,960 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:29:02,967 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:29:03,062 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:29:03,072 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:29:03,087 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:29:04,142 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58260
+2020-02-25 11:29:04,166 - proxy_server - INFO - 276 - Parsed url as 'pixel.facebook.com' and port as '443'.
+2020-02-25 11:29:04,175 - proxy_server - INFO - 142 - https request: CONNECT pixel.facebook.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: pixel.facebook.com:443
+
+
+2020-02-25 11:29:09,415 - proxy_server - INFO - 142 - https request: CONNECT pixel.facebook.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: pixel.facebook.com:443
+
+
+2020-02-25 11:29:10,249 - proxy_server - ERROR - 205 - Socket timed out.
+2020-02-25 11:29:10,277 - proxy_server - INFO - 207 - Cache length: 0
+2020-02-25 11:29:10,287 - proxy_server - INFO - 215 - Cache length: 0
+2020-02-25 11:29:10,299 - proxy_server - INFO - 106 - Connected with 127.0.0.1 on port 58267
+2020-02-25 11:29:10,315 - proxy_server - INFO - 276 - Parsed url as 'kilmainhamgaolmuseum.ie' and port as '80'.

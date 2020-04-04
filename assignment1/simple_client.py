@@ -1,3 +1,4 @@
+"""Simple client for proxy server."""
 # Import socket module 
 import socket			
 import time
