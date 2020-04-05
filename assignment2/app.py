@@ -4,6 +4,7 @@ from typing import List, Dict
 import json
 import datetime
 import jwt
+import os
 
 app = Flask(__name__)
 
@@ -15,15 +16,46 @@ def index():
     """Return landing page."""
     return render_template("index.html", message="Testing Landing Page")
 
-
 @app.route('/ping', methods=['GET'])
 def ping():
     """Register a GET request by printing to console."""
     print("PING to server.")
     return redirect('/')
 
+@app.route('/login', methods=['POST'])
+def login():
+    """Log in a user."""
+    # get the post data
+    post_data = request.get_json()
+    try:
+        # fetch the user data
+        user_email = post_data.get('email')
+        user = check_for_user(user_email)
+        if user:
+            auth_token = encode_auth_token(user_database[user_email]['id'])
+            if auth_token:
+                responseObject = {
+                    'status': 'success',
+                    'message': 'Successfully logged in.',
+                    'auth_token': auth_token.decode()
+                }
+                return make_response(jsonify(responseObject)), 200
+        else:
+            responseObject = {
+                'status': 'fail',
+                'message': 'User does not exist.'
+            }
+            return make_response(jsonify(responseObject)), 404
+    except Exception as e:
+        print(e)
+        responseObject = {
+            'status': 'fail',
+            'message': 'Try again'
+        }
+        return make_response(jsonify(responseObject)), 500
+
 @app.route('/register', methods=['POST'])
-def post():
+def register():
     """Register a new user."""
     # get the post data
     post_data = request.get_json()
@@ -94,11 +126,12 @@ def check_for_user(email):
         return None
 
 def encode_auth_token(user_id):
-    """
-    Generates the Auth Token
+    """Generate the Auth Token.
+
     :return: string
     """
     try:
+        SECRET_KEY = os.getenv('SECRET_KEY')
         payload = {
             'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=5),
             'iat': datetime.datetime.utcnow(),
@@ -106,11 +139,26 @@ def encode_auth_token(user_id):
         }
         return jwt.encode(
             payload,
-            "Secret key",
+            SECRET_KEY,
             algorithm='HS256'
         )
     except Exception as e:
         return e
+
+def decode_auth_token(auth_token):
+    """Decode the auth token.
+
+    :param auth_token:
+    :return: integer|string
+    """
+    try:
+        SECRET_KEY = os.getenv('SECRET_KEY')
+        payload = jwt.decode(auth_token, SECRET_KEY)
+        return payload['sub']
+    except jwt.ExpiredSignatureError:
+        return 'Signature expired. Please log in again.'
+    except jwt.InvalidTokenError:
+        return 'Invalid token. Please log in again.'
 
 if __name__ == "__main__":
     app.run(debug=True)
