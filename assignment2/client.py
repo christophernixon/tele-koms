@@ -32,7 +32,10 @@ class client:
         None
         """
         print("Welcome to a secure social media application.")
-        option_string = "Please select one of the following options:\n1) Ping server\n2) Exit\n"
+        option_string = """Please select one of the following options:\n
+                            1) Ping server\n
+                            2) Send message to server\n
+                            3) Exit\n"""
         while True:
             user_input = input(option_string)
             try:
@@ -43,6 +46,10 @@ class client:
             if selected_option == 1:
                 self.ping_server()
             elif selected_option == 2:
+                message = input("Please enter the message you'd like to send, followed by enter.")
+                self.send_server_message(message)
+                print("Message sent.")
+            elif selected_option == 3:
                 self.shutdown(signal.SIGINT,0)
             else:
                 print("{0} is not a valid option number.".format(selected_option))
@@ -61,6 +68,14 @@ class client:
                 continue
             t.join()
         sys.exit(0)
+
+    def send_server_message(self, message):
+        """Send a message to the server."""
+        message_route = self.local_route + '/messages'
+        dict_data = {'message':message}
+        data = json.dumps(dict_data)
+        raw_response = requests.post(message_route, data=data)
+        print(json.dumps(raw_response.text, indent=2))
 
     def ping_server(self):
         """Ping server."""
