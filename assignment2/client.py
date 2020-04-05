@@ -32,10 +32,11 @@ class client:
         None
         """
         print("Welcome to a secure social media application.")
-        option_string = """Please select one of the following options:\n
+        option_string = ("""Please select one of the following options:\n
                             1) Ping server\n
                             2) Send message to server\n
-                            3) Exit\n"""
+                            3) Get all message sent to server\n
+                            4) Exit\n""")
         while True:
             user_input = input(option_string)
             try:
@@ -50,6 +51,8 @@ class client:
                 self.send_server_message(message)
                 print("Message sent.")
             elif selected_option == 3:
+                self.get_message_dump()
+            elif selected_option == 4:
                 self.shutdown(signal.SIGINT,0)
             else:
                 print("{0} is not a valid option number.".format(selected_option))
@@ -74,7 +77,14 @@ class client:
         message_route = self.local_route + '/messages'
         dict_data = {'message':message}
         data = json.dumps(dict_data)
-        raw_response = requests.post(message_route, data=data)
+        raw_response = requests.post(message_route, json=dict_data)
+        print(json.dumps(raw_response.text, indent=2))
+    
+    def get_message_dump(self):
+        """Get message dump from server."""
+        message_dump_route = self.local_route + '/allmessages'
+        raw_response = requests.get(url=message_dump_route)
+        print("Message dump:")
         print(json.dumps(raw_response.text, indent=2))
 
     def ping_server(self):
@@ -86,6 +96,6 @@ class client:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("port_num", type=int, help="Port number server is connected to.")
+    parser.add_argument("-p", "--port_num", type=int, default=5000, help="Port number server is connected to.")
     args = parser.parse_args()
     client(args.port_num)
