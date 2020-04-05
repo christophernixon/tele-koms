@@ -60,7 +60,14 @@ def register():
     # get the post data
     post_data = request.get_json()
     # check if user already exists
-    user = check_for_user(post_data.get('email'))
+    if 'email' in post_data:
+        user = check_for_user(post_data.get('email'))
+    else:
+        responseObject = {
+                'status': 'fail',
+                'message': 'No email supplied.'
+            }
+        return make_response(jsonify(responseObject)), 401
     if not user:
         try:
             username = post_data.get('username')
@@ -92,16 +99,48 @@ def register():
 def add_message():
     """Add a message to the message_database."""
     req_data = request.get_json()
-    message = req_data['message']
-    message_database.append(message)
-    print("Recieved message: '{0}' and added it to message database.".format(message))
-    return redirect('/')
+    if 'auth_token' in req_data:
+        auth_token = req_data['auth_token']
+        resp = decode_auth_token(auth_token)
+        if not isinstance(resp, str):
+            message = req_data['message']
+            message_database.append(message)
+            print("Recieved message: '{0}' and added it to message database.".format(message))
+            return redirect('/')
+        responseObject = {
+            'status': 'fail',
+            'message': resp
+        }
+        return make_response(jsonify(responseObject)), 401
+    else:
+        responseObject = {
+                'status': 'fail',
+                'message': 'No auth token found, please log in first.'
+            }
+        return make_response(jsonify(responseObject)), 401
 
 @app.route('/allmessages', methods=['GET'])
 def get_messages():
     """Dump message database."""
-    database_dump = ''.join(message_database)
-    return render_template("index.html", message="All messages:"+database_dump)
+    req_data = request.get_json()
+    if 'auth_token' in req_data:
+        auth_token = req_data['auth_token']
+        resp = decode_auth_token(auth_token)
+        if not isinstance(resp, str):
+            database_dump = ''.join(message_database)
+            return render_template("index.html", message="All messages:"+database_dump)
+        responseObject = {
+            'status': 'fail',
+            'message': resp
+        }
+        return make_response(jsonify(responseObject)), 401
+    else:
+        responseObject = {
+                'status': 'fail',
+                'message': 'No auth token found, please log in first.'
+            }
+        return make_response(jsonify(responseObject)), 401
+    
 
 def add_user(email, username):
     """Add a user to the user database."""
@@ -113,7 +152,7 @@ def add_user(email, username):
     
     # Add user to database
     tmp_dict: Dict[str, str] = {}
-    tmp_dict['id'] = str(max_id + 1)
+    tmp_dict['id'] = max_id + 1
     tmp_dict['username'] = username
     user_database[email] = tmp_dict
 
@@ -133,7 +172,7 @@ def encode_auth_token(user_id):
     try:
         SECRET_KEY = os.getenv('SECRET_KEY')
         payload = {
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=5),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=1, seconds=0),
             'iat': datetime.datetime.utcnow(),
             'sub': user_id
         }
