@@ -67,7 +67,7 @@ def register():
                 'status': 'fail',
                 'message': 'No email supplied.'
             }
-        return make_response(jsonify(responseObject)), 401
+        return make_response(jsonify(responseObject)), 400
     if not user:
         try:
             username = post_data.get('username')
@@ -87,7 +87,7 @@ def register():
                 'status': 'fail',
                 'message': 'Some error occurred. Please try again.'
             }
-            return make_response(jsonify(responseObject)), 401
+            return make_response(jsonify(responseObject)), 501
     else:
         responseObject = {
             'status': 'fail',
@@ -99,31 +99,34 @@ def register():
 def add_message():
     """Add a message to the message_database."""
     req_data = request.get_json()
-    if 'auth_token' in req_data:
-        auth_token = req_data['auth_token']
-        resp = decode_auth_token(auth_token)
-        if not isinstance(resp, str):
-            message = req_data['message']
-            message_database.append(message)
-            print("Recieved message: '{0}' and added it to message database.".format(message))
-            return redirect('/')
-        responseObject = {
-            'status': 'fail',
-            'message': resp
-        }
+
+    # Error checking req_data
+    if 'auth_token' not in req_data:
+        responseObject = {'status': 'fail','message': 'No auth token found, please log in first.'}
         return make_response(jsonify(responseObject)), 401
-    else:
-        responseObject = {
-                'status': 'fail',
-                'message': 'No auth token found, please log in first.'
-            }
+    elif 'message' not in req_data:
+        responseObject = {'status': 'fail','message': 'No message found, please supply a message.'}
+        return make_response(jsonify(responseObject)), 400
+
+    auth_token = req_data['auth_token']
+    resp = decode_auth_token(auth_token)
+
+    # Check auth token is valid
+    if isinstance(resp, str):
+        responseObject = {'status': 'fail','message': resp}
         return make_response(jsonify(responseObject)), 401
+
+    message = req_data['message']
+    message_database.append(message)
+    print("Recieved message: '{0}' and added it to message database.".format(message))
+    return redirect('/')
+    
 
 @app.route('/allmessages', methods=['GET'])
 def get_messages():
     """Dump message database."""
     req_data = request.get_json()
-    if 'auth_token' in req_data:
+    if req_data and 'auth_token' in req_data:
         auth_token = req_data['auth_token']
         resp = decode_auth_token(auth_token)
         if not isinstance(resp, str):
@@ -147,8 +150,8 @@ def add_user(email, username):
     # Find max user id
     max_id = 0
     for tmp_email in user_database:
-        if int(tmp_email[id]) > max_id:
-            max_id = int(tmp_email[id])
+        if user_database[tmp_email]['id'] > max_id:
+            max_id = user_database[tmp_email]['id']
     
     # Add user to database
     tmp_dict: Dict[str, str] = {}
@@ -170,7 +173,7 @@ def encode_auth_token(user_id):
     :return: string
     """
     try:
-        SECRET_KEY = os.getenv('SECRET_KEY')
+        SECRET_KEY = os.getenv('SECRET_KEY', "DEFAULT_SECRET")
         payload = {
             'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=1, seconds=0),
             'iat': datetime.datetime.utcnow(),
@@ -191,7 +194,7 @@ def decode_auth_token(auth_token):
     :return: integer|string
     """
     try:
-        SECRET_KEY = os.getenv('SECRET_KEY')
+        SECRET_KEY = os.getenv('SECRET_KEY', "DEFAULT_SECRET")
         payload = jwt.decode(auth_token, SECRET_KEY)
         return payload['sub']
     except jwt.ExpiredSignatureError:
